@@ -1,0 +1,56 @@
+<idea-plugin>
+  <id>AoikFind-IntelliJ</id>
+  <name>AoikFind</name>
+  <version>1.0.0</version>
+  <idea-version since-build="143"/>
+  <vendor email="aoi.kuiyuyou@gmail.com" url="https://github.com/AoiKuiyuyou">AoiKuiyuyou</vendor>
+  <description>
+    <![CDATA[
+      <p>
+        An IntelliJ platform based IDE plugin to show the search box or find the next or the previous occurrence, combined into one hotkey.
+      </p>
+
+      <p>
+        The plugin provides two IDE actions `AoikFind -- Find Next` and `AoikFind -- Find Previous`, which are mapped to hotkeys `Ctrl f` and `Alt f` by default. It is recommended to remap the hotkeys to remove other actions mapped to the same hotkeys.
+      </p>
+
+      <p>
+        When the hotkey `Ctrl f` or `Alt f` is pressed, if the search box is not shown or has no focus, the IDE action shows the search box with the selected text entered into it, otherwise the IDE action finds the next or the previous occurrence of the text in the search box.
+      </p>
+
+      <p>
+        To split the scenario into steps:
+        <ul>
+          <li>1: Press `ESC`. This hides the search box.</li>
+          <li>2: Press `Ctrl f`. This shows the search box.</li>
+          <li>3: Select some text in the editor. This selects the text to be entered into the search box, but also makes the search box lose focus.</li>
+          <li>4: Press `Ctrl f`. This shows the search box with the selected text entered into it.</li>
+          <li>5: Press `Ctrl f`. This continues to find the next occurrence of the text in the search box.</li>
+          <li>6: Press `Ctrl f`. This continues to find the next occurrence of the text in the search box.</li>
+          <li>7: Press `Alt f`. This continues to find the previous occurrence of the text in the search box.</li>
+          <li>8: Press `Alt f`. This continues to find the previous occurrence of the text in the search box.</li>
+        </ul>
+      </p>
+
+      <p>
+        Visit the <a href="https://github.com/AoiKuiyuyou/AoikFind-IntelliJ">project site</a> for more information.
+      </p>
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>1.0.0:</b> Initial version.</li>
+      </ul>
+    ]]>
+  </change-notes>
+  <depends>com.intellij.modules.platform</depends>
+  <actions>
+    <action id="AoikFindNextAction" class="aoik_find.intellij.AoikFindNextAction" text="AoikFind -- Find Next">
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl f"/>
+    </action>
+    <action id="AoikFindPrevAction" class="aoik_find.intellij.AoikFindPrevAction" text="AoikFind -- Find Previous">
+      <keyboard-shortcut keymap="$default" first-keystroke="alt f"/>
+    </action>
+  </actions>
+</idea-plugin>
